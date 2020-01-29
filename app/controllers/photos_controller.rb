@@ -1,2 +1,4 @@
 class PhotosController < ApplicationController
-end
+  def index
+    end
+  end
