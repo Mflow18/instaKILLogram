@@ -1,0 +1,17 @@
+= simple_form_for @photo, html: {multipart:true} do |f|
+- if @photo.errors.any?
+#errors
+  %h2
+    = pluralize(@photo.errors.count, "erreur")
+      ! L'image n'a pas pu être téléchargée.
+
+    %ul
+      - @photo.errors.full_message.each do |msg|
+      %li= msg
+
+.form-group
+  = f.input :title, input_html: { class: 'form-control'}
+  .form-group
+  = f.input :description, input_html: { class: 'form-control'}
+
+  = f.button :submit, class: "btn btn-info"
