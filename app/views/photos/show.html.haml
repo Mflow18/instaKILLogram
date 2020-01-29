@@ -2,4 +2,6 @@
 
 %p= @photo.description
 
+= link_to "Modifier", edit_photo_path
+= link_to "Supprimer", photo_path, method: :delete, data: {confirm: "Etes-vous sûr de vouloir supprimer cette photo?"}
 = link_to "Back", root_path

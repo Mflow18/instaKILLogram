@@ -1,7 +1,8 @@
 class PhotosController < ApplicationController
-  before_setup :find_photo, only [:show, :edit, :update, :destroy]
+  before_action :find_photo, only: [:show, :edit, :update, :destroy]
 
   def index
+    @photos = Photo.all.order("created_at DESC")
   end
 
   def show
@@ -15,10 +16,27 @@ class PhotosController < ApplicationController
     @photo = Photo.new(photo_params)
 
     if @photo.save
-      redirect_to @photo, notice "Votre photo a bien été téléchargée !"
+      redirect_to @photo, notice("Votre photo a bien été téléchargée !")
     else
       render 'new'
     end
+  end
+
+  def edit
+  end
+
+  def update
+    if @photo.update(photo_params)
+      redirect_to @photo, notice("Votre photo à été mise à jour.")
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @photo.destroy
+    redirect_to root_path
+
   end
 
   private
