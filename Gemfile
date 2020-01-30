@@ -27,6 +27,7 @@ gem 'simple_form', '~> 5.0', '>= 5.0.1'
 gem 'devise', '~> 4.2'# Use Active Storage variant
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 gem 'paperclip', '~> 6.1'
+gem 'masonry-rails', '~> 0.2.4'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
