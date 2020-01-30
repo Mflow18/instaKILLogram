@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :photos do
     member do
-      puts "Like", to: "photos#upvote"
+      put "Like", to: "photos#upvote"
     end
   end
   root "photos#index"

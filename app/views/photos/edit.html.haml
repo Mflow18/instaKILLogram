@@ -6,5 +6,5 @@
       .panel-body
         .current-image
           %strong-center Votre image
-          = image_tag @photo.image.url(:medium)
+          = image_tag @photo.image.url(:medium), class: 'photo'
         = render 'form'

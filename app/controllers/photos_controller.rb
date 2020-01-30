@@ -41,7 +41,7 @@ class PhotosController < ApplicationController
 
   def upvote
     @photo.upvote_by current_user
-    redirect_to :back
+    redirect_to @photo
   end
 
   private

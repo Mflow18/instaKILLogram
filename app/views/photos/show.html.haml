@@ -2,7 +2,7 @@
   .col-md-6.col-md-offset-3
     .panel.panel-default
       .panel.heading.photo_image
-        =image_tag @photo.image.url
+        =image_tag @photo.image.url, class: 'photo'
       .panel-body
         %h1= @photo.title
         %p= @photo.description
@@ -13,7 +13,7 @@
             = @photo.user.email
           .col-md-6
             .btn-group.pull-right
-              = link_to like_photo_path(@photo), method: :put, class: "btn btn-default" do
+              = link_to Like_photo_path(@photo), method: :put, class: "btn btn-default" do
                 %span.glyphicon.glyphicon-thumbs-up
                 = @photo.get_upvotes.size
               - if user_signed_in?
