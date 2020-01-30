@@ -1,3 +1,23 @@
 // Place all the styles related to the Photos controller here.
-// They will automatically be included in application.css.
+// They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#edit_page {
+  .current-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.photo {
+  width:100%;
+}
+
+.photo img {
+  width:100%;
+}
+
+.titre {
+  text-align: center;
+}

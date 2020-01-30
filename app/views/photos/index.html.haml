@@ -1,4 +1,7 @@
-- @photos.each do |photo|
-	%h2= link_to photo.title, photo
-
-= link_to "KILL IT", new_photo_path
+.col-md-6.col-md-offset-3
+  #photos.transitions-enabled
+    - @photos.each do |photo|
+      .box.panel.panel-default
+        = link_to (image_tag photo.image.url), photo, class: 'photo'
+      .titre
+        %h2= link_to photo.title, photo
