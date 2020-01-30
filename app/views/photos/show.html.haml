@@ -1,7 +1,24 @@
-%h1= @photo.title
-
-%p= @photo.description
-
-= link_to "Modifier", edit_photo_path
-= link_to "Supprimer", photo_path, method: :delete, data: {confirm: "Etes-vous sûr de vouloir supprimer cette photo?"}
-= link_to "Back", root_path
+#photo_show.row
+  .col-md-6.col-md-offset-3
+    .panel.panel-default
+      .panel.heading.photo_image
+        =image_tag @photo.image.url, class: 'photo'
+      .panel-body
+        %h1= @photo.title
+        %p= @photo.description
+      .panel-footer
+        .row
+          .col-md-6
+            %p Photo faite par :
+            = @photo.user.email
+          .col-md-6
+            .btn-group.pull-right
+              = link_to Like_photo_path(@photo), method: :put, class: "btn btn-default" do
+                %span.glyphicon.glyphicon-thumbs-up
+                = @photo.get_upvotes.size
+              - if user_signed_in?
+                = link_to "Modifier", edit_photo_path, class: "btn btn-info"
+                = link_to "Supprimer", photo_path,
+                 method: :delete,
+                  data: { confirm: "Etes-vous sûr de vouloir supprimer cette photo?" },
+                  class: "btn btn-danger"
