@@ -13,10 +13,10 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = urrent_user.photos.build(photo_params)
+    @photo = current_user.photos.build(photo_params)
 
     if @photo.save
-      redirect_to @photo, notice("Votre photo a bien été téléchargée !")
+      redirect_to @photo, notice => ("Votre photo a bien été téléchargée !")
     else
       render 'new'
     end
@@ -27,7 +27,7 @@ class PhotosController < ApplicationController
 
   def update
     if @photo.update(photo_params)
-      redirect_to @photo #, notice("Votre photo à été mise à jour.")
+      redirect_to @photo, notice => ("Votre photo à été mise à jour.")
     else
       render 'edit'
     end

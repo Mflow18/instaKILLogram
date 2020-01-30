@@ -25,6 +25,8 @@ gem 'haml', '~> 5.1', '>= 5.1.2'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'simple_form', '~> 5.0', '>= 5.0.1'
 gem 'devise', '~> 4.2'# Use Active Storage variant
+gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
+gem 'paperclip', '~> 6.1'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb

@@ -1,7 +1,7 @@
 %h1= @photo.title
 %p= @photo.description
-/= %p= @photo.user.email
+%p= @photo.user.email
 
 = link_to "Modifier", edit_photo_path
-= link_to "Supprimer", photo_path, method: :delete, data: {confirm: "Etes-vous sûr de vouloir supprimer cette photo?"}
+= link_to "Supprimer", photo_path, method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette photo?" }
 = link_to "Retour", root_path
