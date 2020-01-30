@@ -1,0 +1,9 @@
+<%= simple_form_for @photo, defaults: {input_html: {class: 'default_class'}} do |f| %>
+  <div class="form-group">
+    <%= f.input :title, input_html: {class: "form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :description, input_html: {class: "form-control"} %>
+  </div>
+  <%= f.button :submit %>
+<% end %>
